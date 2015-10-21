@@ -1,12 +1,15 @@
 #ifndef LINE_H
 #define LINE_H
 
+#include "object.h"
+
 
 class Line : public QObject
 {
     Q_OBJECT
 public:
     explicit Line(QObject *parent = 0);
+    void drawLine();
 
 signals:
 

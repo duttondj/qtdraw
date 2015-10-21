@@ -1,16 +1,14 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
+#include <QString>
+#include <QPoint>
 
-class Message : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit Message(QWidget *parent = 0);
-
-signals:
-
-public slots:
-};
+QString createMessage(unsigned int mode, QPoint p1);
+QString createMessage(unsigned int mode, QString p1);
+QString createMessage(unsigned int mode, QPoint p1, QPoint p2);
+QString createMessage(unsigned int mode, QPoint p1, QString p2);
+QString createMessage(unsigned int mode, QString p1, QString p2);
+QString createMessage(unsigned int mode, QString p1, QPoint p2);
 
 #endif // MESSAGE_H
