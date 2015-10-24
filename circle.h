@@ -1,3 +1,6 @@
+// Danny Dutton
+// Project 2: QtDraw
+
 #ifndef CIRCLE_H
 #define CIRCLE_H
 

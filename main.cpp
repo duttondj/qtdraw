@@ -1,3 +1,6 @@
+// Danny Dutton
+// Project 2: QtDraw
+
 #include "qtdraw.h"
 #include <QApplication>
 

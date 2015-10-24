@@ -1,3 +1,6 @@
+// Danny Dutton
+// Project 2: QtDraw
+
 #ifndef LINE_H
 #define LINE_H
 

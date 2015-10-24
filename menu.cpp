@@ -1,3 +1,6 @@
+// Danny Dutton
+// Project 2: QtDraw
+
 #include "menu.h"
 
 QString toggleLabel(QString str, bool isBold)

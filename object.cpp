@@ -1,3 +1,6 @@
+// Danny Dutton
+// Project 2: QtDraw
+
 #include "object.h"
 
 Object::Object(QObject *parent) : QObject(parent)

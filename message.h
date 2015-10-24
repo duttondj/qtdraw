@@ -1,3 +1,6 @@
+// Danny Dutton
+// Project 2: QtDraw
+
 #ifndef MESSAGE_H
 #define MESSAGE_H
 

@@ -1,3 +1,6 @@
+// Danny Dutton
+// Project 2: QtDraw
+
 #include "message.h"
 
 // Create object starting at a point

@@ -1,3 +1,6 @@
+// Danny Dutton
+// Project 2: QtDraw
+
 #ifndef QTDRAW_H
 #define QTDRAW_H
 
