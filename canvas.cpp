@@ -22,22 +22,28 @@ void Canvas::paintEvent(QPaintEvent *)
     //path.moveTo(20, 80);
     //path.lineTo(20, 30);
     //path.cubicTo(80, 0, 50, 50, 80, 80);
-    QRect rect(10, 20, 80, 60);
+    //QRect rect(100, 200, 80, 60);
 
     QPainter painter(this);
 
     painter.beginNativePainting();
 
-    painter.setPen(pen);
-    painter.setBrush(brush);
+    //painter.setPen(pen);
+    //painter.setBrush(brush);
 
-    painter.drawEllipse(rect);
-    painter.drawPixmap(60, 60, pixmap);
-    painter.restore();
+    //painter.drawEllipse(rect);
+//    painter.drawPixmap(100, 200, 300, 300, pixmap);
+//    painter.restore();
 
-    painter.setRenderHint(QPainter::Antialiasing, false);
-    painter.setPen(palette().dark().color());
-    painter.setBrush(Qt::NoBrush);
+//    painter.setRenderHint(QPainter::Antialiasing, false);
+//    painter.setPen(palette().dark().color());
 
-    update();
+    painter.setWindow(150,150, 300, 300);
+    painter.setPen(Qt::blue);
+    painter.setFont(QFont("Arial", 30));
+    painter.drawText(rect(), Qt::AlignCenter, "Qt");
+    painter.drawText(rect(), Qt::AlignCenter, "danny");
+    painter.drawLine(100,100, 200, 200);
+
+    painter.endNativePainting();
 }

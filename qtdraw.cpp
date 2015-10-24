@@ -10,7 +10,7 @@ qtdraw::qtdraw(QWidget *parent) :
 {
     ui->setupUi(this);
     drawingMode = 0;
-    mycanvas = new Canvas;
+    mycanvas = new Canvas(ui->canvas);
 }
 
 qtdraw::~qtdraw()
