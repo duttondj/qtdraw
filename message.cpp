@@ -3,117 +3,42 @@
 
 #include "message.h"
 
-// Create object starting at a point
-QString createMessage(unsigned int mode, QPoint p1)
+message::message(QWidget *parent) : QWidget(parent)
 {
-    QString msg = "";
-
-    if(mode == 0)
-    {
-        return msg;
-    }
-    if(mode == 1)
-    {
-        return msg.sprintf("Draw line from (%i, %i) to ...", p1.x(), p1.y());
-    }
-    if(mode == 2)
-    {
-        return msg.sprintf("Draw circle centered at (%i, %i) and passing through ...", p1.x(), p1.y());
-    }
+    setm("");
 }
 
-// Create object starting at a handle
-QString createMessage(unsigned int mode, QString p1)
+void message::setm(string str)
 {
-    QString msg = "";
-
-    if(mode == 0)
-    {
-        return msg;
-    }
-    if(mode == 1)
-    {
-        return msg.sprintf("Draw line from %s to ...", p1.toStdString());
-    }
-    if(mode == 2)
-    {
-        return msg.sprintf("Draw circle centered at %s and passing through ...", p1);
-    }
+    dispMessage->setText(str);
 }
 
-
-// Start and Finish object at a point
-QString createMessage(unsigned int mode, QPoint p1, QPoint p2)
+void message::changem(string newBegin, string newEnd, int newItem)
 {
-    QString msg = "";
+    begin = newBegin;
+    end = newEnd;
+    item = newItem;
 
-    if(mode == 0)
-    {
-        return msg;
-    }
-    if(mode == 1)
-    {
-        return msg.sprintf("Draw line from (%i, %i) to (%i, %i)", p1.x(), p1.y(), p2.x(), p2.y());
-    }
-    if(mode == 2)
-    {
-        return msg.sprintf("Draw circle centered at (%i, %i) and passing through (%i, %i)", p1.x(), p1.y(), p2.x(), p2.y());
-    }
+    update();
 }
 
-// Start object at point and finish at handle
-QString createMessage(unsigned int mode, QPoint p1, QString p2)
+void message::paintEvent(QPaintEvent *event)
 {
-    QString msg = "";
+    QPainter * painter = new QPainter(this);
+    string str = "Drawing ";
+    if(item == 2)
+    {
+        str += "Circle ";
+    }
+    if(item == 3)
+    {
+        str += "Line ";
+    }
 
-    if(mode == 0)
-    {
-        return msg;
-    }
-    if(mode == 1)
-    {
-        return msg.sprintf("Draw line from (%i, %i) to %s", p1.x(), p1.y(), p2.toStdString());
-    }
-    if(mode == 2)
-    {
-        return msg.sprintf("Draw circle centered at (%i, %i) and passing through %s", p1.x(), p1.y(), p2.toStdString());
-    }
-}
+    str += "from ";
+    str += begin;
+    str += "to ";
+    str += end;
 
-// Start and Finish object at handles
-QString createMessage(unsigned int mode, QString p1, QString p2)
-{
-    QString msg = "";
-
-    if(mode == 0)
-    {
-        return msg;
-    }
-    if(mode == 1)
-    {
-        return msg.sprintf("Draw line from %s to %s", p1.toStdString(), p2.toStdString());
-    }
-    if(mode == 2)
-    {
-        return msg.sprintf("Draw circle centered at (%i, %i) and passing through (%i, %i)", p1.toStdString(), p2.toStdString());
-    }
-}
-
-// Start object at handle and finish at point
-QString createMessage(unsigned int mode, QString p1, QPoint p2)
-{
-    QString msg = "";
-
-    if(mode == 0)
-    {
-        return msg;
-    }
-    if(mode == 1)
-    {
-        return msg.sprintf("Draw line from %s to (%i, %i)", p1.toStdString(), p2.x(), p2.y());
-    }
-    if(mode == 2)
-    {
-        return msg.sprintf("Draw circle centered at %s and passing through (%i, %i)", p1.toStdString(), p2.x(), p2.y());
-    }
+    painter->drawText(this->x()+250, this->y() + 15, str);
 }

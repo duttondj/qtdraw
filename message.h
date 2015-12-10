@@ -6,6 +6,9 @@
 
 #include <QString>
 #include <QPoint>
+#include <QtGui>
+#include <string>
+#include "object.h"
 
 class message : public QWidget
 {
@@ -17,6 +20,7 @@ public:
 public slots:
 	void changem(string newBegin, string newEnd, int newItem);
 private:
+	QLabel* dispMessage;
 	string begin;
 	string end;
 	int item;
