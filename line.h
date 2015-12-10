@@ -6,17 +6,17 @@
 
 #include "object.h"
 
-
-class Line : public QObject
+class Line : public Object
 {
-    Q_OBJECT
 public:
-    explicit Line(QObject *parent = 0);
-    void drawLine();
+    Line();
+    Line(QPoint newBegin, QPoint newEnd);
+    virtual void render(QPainter* painter);
+    virtual void snap(QPoint &point, string &str);
 
-signals:
-
-public slots:
+private:
+    QPoint begin;
+    QPoint end;
 };
 
 #endif // LINE_H

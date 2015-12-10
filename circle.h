@@ -4,22 +4,20 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-#include <QPoint>
+#include "object.h"
 
-class Circle : public QObject
+class Circle : public Object
 {
-    Q_OBJECT
 public:
-    explicit Circle(QObject *parent = 0);
-
+    // Two contructors, default is used before center is placed, second is used after center is placed
+    Circle();
+    Circle(QPoint newCenter, unsigned int radius);
+    virtual void render(QPainter* painter, bool showHandles);
+    virtual void snap(QPoint &point, string &str);
 
 private:
     QPoint center;
     unsigned int radius;
-
-signals:
-
-public slots:
 };
 
 #endif // CIRCLE_H

@@ -4,49 +4,94 @@
 #include <QtGui>
 #include "canvas.h"
 
-Canvas::Canvas(QWidget *parent) : QWidget(parent)
+Canvas::Canvas()
 {
-    pixmap.load(":/image.png");
-
-    setBackgroundRole(QPalette::Base);
-    setAutoFillBackground(true);
+    item = 1;
 }
 
-void Canvas::setAntialiased(bool antialiased)
+void Canvas::render(QPainter* painter, bool showHandles)
 {
-    this->antialiased = antialiased;
-    update();
+    painter->save();
+    painter->setPen(Qt::black);
+    painter->drawRect(3, 3, width-6, height-6);
+    if(showHandles)
+    {
+        painter->setBrush(QBrush(Qt::yellow));
+        painter->drawEllipse(topLeft.x()-3, topLeft.y()-3,6,6);
+        painter->drawEllipse(top.x()-3, top.y()-3,6,6);
+        painter->drawEllipse(topRight.x()-3, topRight.y()-3,6,6);
+        painter->drawEllipse(left.x()-3, left.y()-3,6,6);
+        painter->drawEllipse(center.x()-3, center.y()-3,6,6);
+        painter->drawEllipse(right.x()-3, right.y()-3,6,6);
+        painter->drawEllipse(bottomLeft.x()-3, bottomLeft.y()-3,6,6);
+        painter->drawEllipse(bottom.x()-3, bottom.y()-3,6,6);
+        painter->drawEllipse(bottomRight.x()-3, bottomRight.y()-3,6,6);
+    }
+    painter->restore();
 }
 
-void Canvas::paintEvent(QPaintEvent *)
+bool Canvas::snap(QPoint &point, string &str)
 {
-    //QPainterPath path;
+    str = "Canvas's ";
 
-    //path.moveTo(20, 80);
-    //path.lineTo(20, 30);
-    //path.cubicTo(80, 0, 50, 50, 80, 80);
-    //QRect rect(100, 200, 80, 60);
+    if (QLine(topLeft, point).length() < 5)
+    {
+        point = topLeft;
+        str += "top left corner";
+    }
 
-    QPainter painter(this);
+    else if (QLine(top, point).length() < 5)
+    {
+        point = top;
+        str += "top edge";
+    }
 
-    painter.beginNativePainting();
+    else if (QLine(topRight, point).length() < 5)
+    {
+        point = topRight;
+        str += "top right corner";
+    }
 
-    //painter.setPen(pen);
-    //painter.setBrush(brush);
+    else if (QLine(left, point).length() < 5)
+    {
+        point = left;
+        str += "left edge";
+    }
 
-    //painter.drawEllipse(rect);
-//    painter.drawPixmap(100, 200, 300, 300, pixmap);
-//    painter.restore();
+    else if (QLine(center, point).length() < 5)
+    {
+        point = center;
+        str += "center";
+    }
 
-//    painter.setRenderHint(QPainter::Antialiasing, false);
-//    painter.setPen(palette().dark().color());
+    else if (QLine(right, point).length() < 5)
+    {
+        point = right;
+        str += "right edge";
+    }
 
-    painter.setWindow(150,150, 300, 300);
-    painter.setPen(Qt::blue);
-    painter.setFont(QFont("Arial", 30));
-    painter.drawText(rect(), Qt::AlignCenter, "Qt");
-    painter.drawText(rect(), Qt::AlignCenter, "danny");
-    painter.drawLine(100,100, 200, 200);
+    else if (QLine(bottomLeft, point).length() < 5)
+    {
+        point = bottomLeft;
+        str += "bottom left corner";
+    }
 
-    painter.endNativePainting();
+    else if (QLine(bottom, point).length() < 5)
+    {
+        point = bottom;
+        str += "bottom edge";
+    }
+
+    else if (QLine(bottomRight, point).length() < 5)
+    {
+        point = bottomRight;
+        str += "bottom right corner";
+    }
+
+    else
+    {
+        return false;
+    }
+
+    return true;
 }

@@ -7,11 +7,19 @@
 #include <QString>
 #include <QPoint>
 
-QString createMessage(unsigned int mode, QPoint p1);
-QString createMessage(unsigned int mode, QString p1);
-QString createMessage(unsigned int mode, QPoint p1, QPoint p2);
-QString createMessage(unsigned int mode, QPoint p1, QString p2);
-QString createMessage(unsigned int mode, QString p1, QString p2);
-QString createMessage(unsigned int mode, QString p1, QPoint p2);
+class message : public QWidget
+{
+	Q_OBJECT
+public:
+	message(QWidget *parent = 0);
+	void setm(string str);
+	void paintEvent(QPaintEvent* event);
+public slots:
+	void changem(string newBegin, string newEnd, int newItem);
+private:
+	string begin;
+	string end;
+	int item;
+};
 
 #endif // MESSAGE_H
