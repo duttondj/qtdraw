@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'qtdraw.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.7
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,18 +10,18 @@
 #define UI_QTDRAW_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QFrame>
-#include <QtGui/QGridLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QMainWindow>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -46,7 +46,7 @@ public:
     void setupUi(QMainWindow *qtdraw)
     {
         if (qtdraw->objectName().isEmpty())
-            qtdraw->setObjectName(QString::fromUtf8("qtdraw"));
+            qtdraw->setObjectName(QStringLiteral("qtdraw"));
         qtdraw->resize(800, 480);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -68,25 +68,25 @@ public:
         qtdraw->setMouseTracking(false);
         qtdraw->setAutoFillBackground(false);
         centralWidget = new QWidget(qtdraw);
-        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setAutoFillBackground(false);
         gridLayoutWidget = new QWidget(centralWidget);
-        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 0, 811, 486));
+        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(0, 0, 811, 505));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
         horizontalFrame = new QFrame(gridLayoutWidget);
-        horizontalFrame->setObjectName(QString::fromUtf8("horizontalFrame"));
+        horizontalFrame->setObjectName(QStringLiteral("horizontalFrame"));
         horizontalFrame->setMinimumSize(QSize(675, 0));
         horizontalLayout = new QHBoxLayout(horizontalFrame);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         message = new QLabel(horizontalFrame);
-        message->setObjectName(QString::fromUtf8("message"));
+        message->setObjectName(QStringLiteral("message"));
         sizePolicy.setHeightForWidth(message->sizePolicy().hasHeightForWidth());
         message->setSizePolicy(sizePolicy);
         message->setMinimumSize(QSize(0, 0));
@@ -97,7 +97,7 @@ public:
         gridLayout->addWidget(horizontalFrame, 0, 1, 1, 1);
 
         canvas = new QWidget(gridLayoutWidget);
-        canvas->setObjectName(QString::fromUtf8("canvas"));
+        canvas->setObjectName(QStringLiteral("canvas"));
         canvas->setEnabled(true);
         sizePolicy.setHeightForWidth(canvas->sizePolicy().hasHeightForWidth());
         canvas->setSizePolicy(sizePolicy);
@@ -121,28 +121,28 @@ public:
         gridLayout->addWidget(canvas, 1, 1, 1, 1);
 
         verticalFrame = new QFrame(gridLayoutWidget);
-        verticalFrame->setObjectName(QString::fromUtf8("verticalFrame"));
+        verticalFrame->setObjectName(QStringLiteral("verticalFrame"));
         verticalFrame->setMaximumSize(QSize(100, 16777215));
         verticalLayout_2 = new QVBoxLayout(verticalFrame);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         lineLabel = new QLabel(verticalFrame);
-        lineLabel->setObjectName(QString::fromUtf8("lineLabel"));
+        lineLabel->setObjectName(QStringLiteral("lineLabel"));
         sizePolicy.setHeightForWidth(lineLabel->sizePolicy().hasHeightForWidth());
         lineLabel->setSizePolicy(sizePolicy);
 
         verticalLayout_2->addWidget(lineLabel);
 
         circleLabel = new QLabel(verticalFrame);
-        circleLabel->setObjectName(QString::fromUtf8("circleLabel"));
+        circleLabel->setObjectName(QStringLiteral("circleLabel"));
         sizePolicy.setHeightForWidth(circleLabel->sizePolicy().hasHeightForWidth());
         circleLabel->setSizePolicy(sizePolicy);
 
         verticalLayout_2->addWidget(circleLabel);
 
         abortLabel = new QLabel(verticalFrame);
-        abortLabel->setObjectName(QString::fromUtf8("abortLabel"));
+        abortLabel->setObjectName(QStringLiteral("abortLabel"));
         sizePolicy.setHeightForWidth(abortLabel->sizePolicy().hasHeightForWidth());
         abortLabel->setSizePolicy(sizePolicy);
 
@@ -168,11 +168,11 @@ public:
 
     void retranslateUi(QMainWindow *qtdraw)
     {
-        qtdraw->setWindowTitle(QApplication::translate("qtdraw", "qtdraw", 0, QApplication::UnicodeUTF8));
+        qtdraw->setWindowTitle(QApplication::translate("qtdraw", "qtdraw", Q_NULLPTR));
         message->setText(QString());
-        lineLabel->setText(QApplication::translate("qtdraw", "Line        x", 0, QApplication::UnicodeUTF8));
-        circleLabel->setText(QApplication::translate("qtdraw", "Circle      c", 0, QApplication::UnicodeUTF8));
-        abortLabel->setText(QApplication::translate("qtdraw", "Abort      esc", 0, QApplication::UnicodeUTF8));
+        lineLabel->setText(QApplication::translate("qtdraw", "Line        x", Q_NULLPTR));
+        circleLabel->setText(QApplication::translate("qtdraw", "Circle      c", Q_NULLPTR));
+        abortLabel->setText(QApplication::translate("qtdraw", "Abort      esc", Q_NULLPTR));
     } // retranslateUi
 
 };

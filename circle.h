@@ -13,7 +13,7 @@ public:
     Circle();
     Circle(QPoint newCenter, unsigned int radius);
     virtual void render(QPainter* painter, bool showHandles);
-    virtual void snap(QPoint &point, string &str);
+    virtual void snap(QPoint &point, std::string &str);
 
 private:
     QPoint center;

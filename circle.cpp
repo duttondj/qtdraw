@@ -33,7 +33,7 @@ void Circle::render(QPainter* painter, bool showHandles)
     painter->restore();
 }
 
-void Circle::snap(QPoint &point, string &str)
+void Circle::snap(QPoint &point, std::string &str)
 {
 	str = "Circle's ";
 

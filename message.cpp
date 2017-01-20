@@ -3,17 +3,17 @@
 
 #include "message.h"
 
-message::message(QWidget *parent) : QWidget(parent)
+Message::Message(QWidget *parent) : QWidget(parent)
 {
     setm("");
 }
 
-void message::setm(string str)
+void Message::setm(string str)
 {
     dispMessage->setText(str);
 }
 
-void message::changem(string newBegin, string newEnd, int newItem)
+void Message::changem(std::string newBegin, std::string newEnd, int newItem)
 {
     begin = newBegin;
     end = newEnd;
@@ -22,10 +22,10 @@ void message::changem(string newBegin, string newEnd, int newItem)
     update();
 }
 
-void message::paintEvent(QPaintEvent *event)
+void Message::paintEvent(QPaintEvent *event)
 {
     QPainter * painter = new QPainter(this);
-    string str = "Drawing ";
+    std::string str = "Drawing ";
     if(item == 2)
     {
         str += "Circle ";

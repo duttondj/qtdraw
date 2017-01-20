@@ -29,7 +29,7 @@ void Line::paint(QPainter *painter, bool showHandles)
 	painter->restore();
 }
 
-bool Line::snap(QPoint &point, string &str)
+bool Line::snap(QPoint &point, std::string &str)
 {
 	if(QLine(begin, point) < 5)
 	{

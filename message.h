@@ -8,21 +8,21 @@
 #include <QPoint>
 #include <QtGui>
 #include <string>
-#include "object.h"
+#include "model.h"
 
-class message : public QWidget
+class Message : public QWidget
 {
 	Q_OBJECT
 public:
-	message(QWidget *parent = 0);
-	void setm(string str);
+	Message(QWidget *parent = 0);
+	void setm(std::string str);
 	void paintEvent(QPaintEvent* event);
 public slots:
-	void changem(string newBegin, string newEnd, int newItem);
+	void changem(std::string newBegin, std::string newEnd, int newItem);
 private:
 	QLabel* dispMessage;
-	string begin;
-	string end;
+	std::string begin;
+	std::string end;
 	int item;
 };
 

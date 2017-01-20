@@ -30,7 +30,7 @@ void Canvas::render(QPainter* painter, bool showHandles)
     painter->restore();
 }
 
-bool Canvas::snap(QPoint &point, string &str)
+bool Canvas::snap(QPoint &point, std::string &str)
 {
     str = "Canvas's ";
 

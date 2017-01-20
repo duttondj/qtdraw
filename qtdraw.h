@@ -10,11 +10,9 @@
 #include <QWidget>
 
 #include "message.h"
+#include "canvasview.h"
 //#include "menu.h"
 #include "ui_qtdraw.h"
-#include "canvas.h"
-#include "circle.h"
-#include "line.h"
 
 class qtdraw : public QWidget
 {
@@ -25,6 +23,8 @@ public:
     ~qtdraw();
 
 private:
+	CanvasView mycanvas;
+	Message mymessage;
     
 };
 

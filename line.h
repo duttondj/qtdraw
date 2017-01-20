@@ -12,7 +12,7 @@ public:
     Line();
     Line(QPoint newBegin, QPoint newEnd);
     virtual void render(QPainter* painter);
-    virtual void snap(QPoint &point, string &str);
+    virtual void snap(QPoint &point, std::string &str);
 
 private:
     QPoint begin;
